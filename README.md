@@ -52,7 +52,11 @@ Cierra el sistema con protecciones de alto nivel[cite: 1].
 | Rol                 | Términos | Taller Principal |
 
 | **BD & PDO**        | 3        | Base de todos los talleres |
+
 | **Frontend & HTML** | 5        | Taller 1 (GET vs POST) |
+
 | **Superglobales**   | 4        | Procesamiento de datos |
+
 | **Validación PHP**  | 4        | Taller 2 (Registro) |
+
 | **Cifrado & CSRF**  | 3        | Taller 3 (Seguro completo) |
