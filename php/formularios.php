@@ -19,7 +19,7 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h2 {
-            color: #333;
+            color: #333333;
         }
         input, button {
             display: block;
@@ -30,7 +30,7 @@
             box-sizing: border-box;
         }
         button {
-            background: #007bff;
+            background: #0074f0;
             color: white;
             border: none;
             cursor: pointer;
