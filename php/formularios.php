@@ -50,33 +50,37 @@
         </div>
 
         <!-- FORMULARIO POST (CON CONFIRMACIÓN) -->
-        <div class="col-lg-5">
-            <div class="card shadow-sm h-100 border-top border-primary border-4">
-                <div class="card-body p-4">
-                    <h3 class="h5 mb-4 text-primary"><i class="bi bi-person-plus-fill me-2"></i>Módulo POST</h3>
-                    <form action="" method="post">
-                        <div class="mb-3 text-start">
-                            <label class="form-label small fw-bold">Nombre</label>
-                            <input type="text" name="nombre" class="form-control">
-                        </div>
-                        <div class="mb-3 text-start">
-                            <label class="form-label small fw-bold">Email</label>
-                            <input type="email" name="email" class="form-control">
-                        </div>
-                        <div class="mb-3 text-start">
-                            <label class="form-label small fw-bold">Contraseña</label>
-                            <input type="password" name="password" class="form-control">
-                        </div>
-                        <div class="mb-4 text-start">
-                            <label class="form-label small fw-bold">Confirmar Contraseña</label>
-                            <input type="password" name="confirm_password" class="form-control">
-                        </div>
-                        <button type="submit" name="submit_post" class="btn btn-primary w-100 fw-bold shadow-sm">REGISTRAR USUARIO</button>
-                    </form>
-                    <?php echo $feedback_post; ?>
+        <!-- FORMULARIO POST (CON CSRF) -->
+<div class="col-lg-5">
+    <div class="card shadow-sm h-100 border-top border-primary border-4">
+        <div class="card-body p-4">
+            <h3 class="h5 mb-4 text-primary"><i class="bi bi-person-plus-fill me-2"></i>Módulo POST</h3>
+            <form action="" method="post">
+                <!-- CAPTURA OBLIGATORIA: Campo oculto con el token CSRF[cite: 1] -->
+                <input type="hidden" name="csrf_token" value="<?php echo $seguridad->generarCsrfToken(); ?>">
+                
+                <div class="mb-3 text-start">
+                    <label class="form-label small fw-bold">Nombre</label>
+                    <input type="text" name="nombre" class="form-control" required>
                 </div>
-            </div>
+                <div class="mb-3 text-start">
+                    <label class="form-label small fw-bold">Email</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label class="form-label small fw-bold">Contraseña</label>
+                    <input type="password" name="password" class="form-control" required>
+                </div>
+                <div class="mb-4 text-start">
+                    <label class="form-label small fw-bold">Confirmar Contraseña</label>
+                    <input type="password" name="confirm_password" class="form-control" required>
+                </div>
+                <button type="submit" name="submit_post" class="btn btn-primary w-100 fw-bold shadow-sm">REGISTRAR USUARIO</button>
+            </form>
+            <?php echo $feedback_post; ?>
         </div>
+    </div>
+</div>
 
     </div>
 </div>
